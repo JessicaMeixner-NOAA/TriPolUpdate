@@ -1,0 +1,22 @@
+This script is from Denise Worthen.  To run you do: 
+
+ncl plot_ww3tripole.ncl
+
+If you do:
+  wkstype="X11"
+  ;wkstype="png"
+
+instead of
+  ;wkstype="X11"
+  wkstype="png"
+it will go to a window instead of the png file. 
+
+the rtsrc  is the path to your folder
+
+and here is where you put the name of the file in:
+   gf =addfile(rtsrc+"ww3.194801.nc","r")
+
+
+   lstep=15-1     is the time step (it indexes starting with zero so that's why there is the -1). 
+
+
