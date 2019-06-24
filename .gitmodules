@@ -1,0 +1,4 @@
+[submodule "WW3"]
+	path = WW3
+	url = git@github.com:breichl/WW3.git
+	branch = TriPolarWorkBranch_vlab
