@@ -1,0 +1,30 @@
+#!/bin/sh --login
+
+#SBATCH -n 24
+#SBATCH -q batch
+#SBATCH -t 30:00
+#SBATCH -A marine-cpu
+#SBATCH -J ww3_regtest
+#SBATCH -o mtestmpi.out
+
+
+  cd /scratch3/NCEPDEV/stmp2/Jessica.Meixner/TriPolWork03/WW3/regtests
+
+  module load netcdf/4.3.0
+  export WWATCH3_NETCDF=NC4
+  export NETCDF_CONFIG=/apps/netcdf/4.3.0-intel/bin/nc-config
+
+
+#  ./bin/run_test -s MPI_PR1 -w work_MPI_1 -f -p mpirun -n 2 ../model TriPol
+#  ./bin/run_test -a ../model/wwatch3.env -s PR1 -w work_ser1 -f  ../model TriPol
+#./bin/run_test -b slurm -c Intel -S -T -s PR1_MPI -w work_PR1_MPI_b  -m grdset_b  -f -p srun -n 24 ../model mww3_test_04
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test01 -o netcdf -f -p srun -n 1 ../model TriPol
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test02 -o netcdf -f -p srun -n 2 ../model TriPol
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test03 -o netcdf -f -p srun -n 3 ../model TriPol
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test04 -o netcdf -f -p srun -n 4 ../model TriPol
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test08 -o netcdf -f -p srun -n 8 ../model TriPol
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test12 -o netcdf -f -p srun -n 12 ../model TriPol
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test24 -o netcdf -f -p srun -n 24 ../model TriPol
+
+
+#./bin/run_test -a ../model/wwatch3.env -S -s BT8_MPI -w work_BT8_MPI  -f -p mpirun -n 24 ../model ww3_tbt1.1
