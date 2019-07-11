@@ -1,5 +1,10 @@
 input2 is a director with the simple case of -1000 depth starting from an initial group of waves propagating over north pole/fold 
 
+./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test01 -o netcdf -f -p srun -n 12 ../model TriPol
+./bin/run_test -b slurm -c Intel -s PR1 -w work_serial -o netcdf ../model TriPol
+
 input3 has bathy 
+
+./bin/run_test -b slurm -c Intel -s PR1 -w work_serial -o netcdf -i input3 ../model TriPol
 
 input4 has bathy and adds wind input and source terms to grid
