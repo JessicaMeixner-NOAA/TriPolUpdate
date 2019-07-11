@@ -1,0 +1,70 @@
+$ -------------------------------------------------------------------- $
+$ WAVEWATCH III shell input file                                       $
+$ -------------------------------------------------------------------- $
+$ Define input to be used with flag for use and flag for definition
+$ as a homogeneous field; four input lines.
+$ 1) Water levels
+$ 2) Currents
+$ 3) Winds
+$ 4) Ice concentrations (cannot be homogeneous).
+$
+   F F
+   F F
+   F F
+   F
+   F       Assimilation data : Mean parameters
+   F       Assimilation data : 1-D spectra
+   F       Assimilation data : 2-D spectra.
+$
+$ Time frame of calculations ----------------------------------------- $
+$ - Starting time in yyyymmdd hhmmss format.
+$ - Ending time in yyyymmdd hhmmss format.
+$
+   19480101 000000
+   19480102 120000
+$
+$---------------------------------------------------------
+    1
+$--------------------------------------------------------
+$
+$ Define output data ------------------------------------------------- $
+$ Five output types are available (see below). All output types share
+$ a similar format for the first input line:
+$ - first time in yyyymmdd hhmmss format, output interval (s), and 
+$   last time in yyyymmdd hhmmss format (all integers).
+$ Output is disabled by setting the output interval to 0.
+$
+$ Type 1 : Fields of mean wave parameters
+   19480101 000000  3600     20000131 000000
+$----------------------------------------------------------------
+$ Output request flags identifying fields as in ww3_shel input and
+$ section 2.4 of the manual.
+$
+  N
+  DPT WND HS
+$
+$----------------------------------------------------------------
+$ Type 2 : Point output
+    20090522 000000  3600   20090525 000000
+    119.10    83.44  'A point'
+    0.0   0.0  'STOPSTRING'
+$
+$ Type 3 : Output along  track.
+   20080522 000000   0  20080525 000000
+$
+$ Type 4 : Restart files (no additional data required).
+   20080522 000000   0  20080525 000000
+$
+$ Type 5 : Boundary data (no additional data required).
+$
+   20080522 000000   0  20080525 000000
+$ Type 6 : Whatever
+   20080522 000000   0  20080525 000000
+$
+$ Homogeneous field data --------------------------------------------- $
+$ 'STP' is mandatory stop string.
+   'STP'
+$
+$ -------------------------------------------------------------------- $
+$ End of input file                                                    $
+$ -------------------------------------------------------------------- $
