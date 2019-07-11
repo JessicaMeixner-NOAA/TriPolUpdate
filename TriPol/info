@@ -1,10 +1,21 @@
-input2 is a director with the simple case of -1000 depth starting from an initial group of waves propagating over north pole/fold 
+Description of cases that can be run as regression tests using run_test script 
+Currently need to add in run_test to copy the ocean_hgrid.nc into the current work directory 
 
+To run the tests: 
+./bin/run_test -b slurm -c Intel -i input2 -s PR1 -w work_serial -o netcdf ../model TriPol
 ./bin/run_test -b slurm -c Intel -s PR1_MPI -w work_MPI_test01 -o netcdf -f -p srun -n 12 ../model TriPol
-./bin/run_test -b slurm -c Intel -s PR1 -w work_serial -o netcdf ../model TriPol
 
-input3 has bathy 
 
-./bin/run_test -b slurm -c Intel -s PR1 -w work_serial -o netcdf -i input3 ../model TriPol
+input
+- Is the original directory without modifications 
 
-input4 has bathy and adds wind input and source terms to grid
+input2 
+- Swell propagation case (currently going straight over N.Pole), Constant deep water depth (-1000m)
+ 
+input3 
+- Swell propagation case with actual bathymetry 
+
+input4
+- Wind input is added, uses actual bathy, source terms are added
+
+

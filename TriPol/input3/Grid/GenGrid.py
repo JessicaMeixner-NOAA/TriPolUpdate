@@ -38,7 +38,7 @@ f5=open('../NewTriPol.Lon','w')
 for ii in np.arange(150,210):
     for jj in np.arange(0,360):
         f1.write(str(H_MSK[ii,jj])+' ')
-        f2.write(str(H_DPT[ii,jj])+' ')
+        f2.write(str(-H_DPT[ii,jj])+' ')
         f3.write(str(0.)+' ')
         f4.write(str(H_LAT[ii,jj])+' ')
         f5.write(str(H_LON[ii,jj])+' ')
