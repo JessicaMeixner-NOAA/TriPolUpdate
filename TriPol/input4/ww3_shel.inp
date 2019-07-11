@@ -8,13 +8,13 @@ $ 2) Currents
 $ 3) Winds
 $ 4) Ice concentrations (cannot be homogeneous).
 $
-   F F
-   F F
-   F F
-   F
+   F F     Water levels
+   F F     Currents
+   T F     Winds
+   F       Ice concentrations
    F       Assimilation data : Mean parameters
    F       Assimilation data : 1-D spectra
-   F       Assimilation data : 2-D spectra.
+   F       Assimilation data : 2-D spectra
 $
 $ Time frame of calculations ----------------------------------------- $
 $ - Starting time in yyyymmdd hhmmss format.
