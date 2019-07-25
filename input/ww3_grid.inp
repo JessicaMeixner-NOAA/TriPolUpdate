@@ -3,6 +3,7 @@ $ ------------------------------------------
   'Global Tripolar Grid '
 $
 $   1.1 0.03679 25 24 0.
+$    1.1 0.04118 5 96 0
     1.1 0.04118 25 24 0.5
 $
 $ Set model flags ---------------------------------------------------- $
@@ -24,17 +25,19 @@ $ &PRO2 DTIME = 2777. /
  &PRO3 WDTHCG = 0., WDTHTH = 0. /
 $ &PRO4 RNFAC = 0., RSFAC = 0. /
   &MISC CICE0 = 0.25, CICEN = 0.75, FLAGTR = 4 /
+ &GLOC READ_GRID_METRICS = .false.,
+       GRID_METRIC_FILENAME = 'ocean_hgrid.nc' /
 END OF NAMELISTS
 $
 $ case6ith no grid closure :
   'CURV' T 'TRPL'
-  360 60
-  20 1.0 0.0 1 1 '(....)' 'NAME' './../input/NewTriPol.Lon'
-  21 1.0 0.0 1 1 '(....)' 'NAME' './../input/NewTriPol.Lat'
-  -0.1 2.50  22  1.0 1 1 '(....)' 'NAME' './../input/NewTriPol.Dpt' 
-  24  0.01  1 1 '(....)' 'NAME' './../input/NewTriPol.Obstr'
-   25  1  1 '(....)' 'NAME' './../input/NewTriPol.Mask'
-$   10 1 1 '(....)' 'PART' './../input/mapsta.inp'
+  360 210
+  20 1.0 0.0 1 1 '(....)' 'NAME' 'NewTriPol.Lon'
+  21 1.0 0.0 1 1 '(....)' 'NAME' 'NewTriPol.Lat'
+  -0.1 2.50  22  1.0 1 1 '(....)' 'NAME' 'NewTriPol.Dpt'
+  24  0.01  1 1 '(....)' 'NAME' 'NewTriPol.Obstr'
+   25  1  1 '(....)' 'NAME' 'NewTriPol.Mask_80_NP'
+$   10 1 1 '(....)' 'PART' 'mapsta.inp'
 $      0   0   F
 $      0   0   F
 $   0  0
